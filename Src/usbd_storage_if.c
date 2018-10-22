@@ -111,25 +111,16 @@ const int8_t  STORAGE_Inquirydata_FS[] = {/* 36 */
   0x00,
   0x00,	
   0x00,
-  'S', 'T', 'M', ' ', ' ', ' ', ' ', ' ', /* Manufacturer : 8 bytes */
-  'P', 'r', 'o', 'd', 'u', 'c', 't', ' ', /* Product      : 16 Bytes */
-  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-  '0', '.', '0' ,'1',                     /* Version      : 4 Bytes */
+  'T', 'a', 'e', 'd', 'o', 'o', ' ', ' ', /* Manufacturer : 8 bytes */
+  'e', 'l', 'e', 'M', 'o', 'n', ' ', 'S', /* Product      : 16 Bytes */
+  't', 'o', 'r', 'a', 'g', 'e', ' ', ' ',
+  '2', '.', '0' ,'0',                     /* Version      : 4 Bytes */
 }; 
 /* USER CODE END INQUIRY_DATA_FS */ 
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
-  HAL_SD_CardInfoTypeDef info;
+HAL_SD_CardInfoTypeDef info;
 extern SD_HandleTypeDef hsd;
-
-uint8_t tLun;
-uint8_t *tData;
-uint32_t tBlockAdd;
-uint32_t tNumberOfBlocks;
-uint16_t tBlk_len;
-
-HAL_StatusTypeDef res;
-
    
 /* USER CODE END PRIVATE_VARIABLES */
 
@@ -269,14 +260,6 @@ int8_t STORAGE_Read_FS (uint8_t lun,
                         uint16_t blk_len)
 {
   /* USER CODE BEGIN 6 */ 
-//  BSP_SD_ReadBlocks_DMA((uint32_t *)buf, blk_addr * STORAGE_BLK_SIZ, blk_len);
-  tLun = lun;
-  tData = buf;
-  tBlockAdd = blk_addr;
-  tNumberOfBlocks = blk_len;
-
-  //res = HAL_SD_ReadBlocks_DMA(&hsd, buf, blk_addr, blk_len);
-  //HAL_SD_ReadBlocks(&hsd, buf, (uint64_t)(blk_addr * info.LogBlockSize), blk_len, 1000); 
   SD_read(lun, buf, blk_addr, blk_len);
 
   return (USBD_OK);
@@ -296,14 +279,6 @@ int8_t STORAGE_Write_FS (uint8_t lun,
                          uint16_t blk_len)
 {
   /* USER CODE BEGIN 7 */ 
-//  BSP_SD_WriteBlocks_DMA((uint32_t *)buf, blk_addr * STORAGE_BLK_SIZ, blk_len);
-  tLun = lun;
-  tData = buf;
-  tBlockAdd = blk_addr;
-  tNumberOfBlocks = blk_len;
-
-//  res = HAL_SD_WriteBlocks_DMA(&hsd, buf, blk_addr, blk_len);
-//  HAL_SD_WriteBlocks(&hsd, buf, (uint64_t)(blk_addr * info.LogBlockSize), info.LogBlockSize, blk_len);
   SD_write(lun, buf, blk_addr, blk_len);
   return (USBD_OK);
   /* USER CODE END 7 */ 

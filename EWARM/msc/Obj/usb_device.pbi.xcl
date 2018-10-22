@@ -20,6 +20,12 @@ E:\101_EleMon\01. ver2.0\04.Firmware\msc\EWARM/../Middlewares/Third_Party/FatFs/
 -I
 E:\101_EleMon\01. ver2.0\04.Firmware\msc\EWARM/../Drivers/CMSIS/Include
 -I
+E:\101_EleMon\01. ver2.0\04.Firmware\msc\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/portable/IAR/ARM_CM4F
+-I
+E:\101_EleMon\01. ver2.0\04.Firmware\msc\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include
+-I
+E:\101_EleMon\01. ver2.0\04.Firmware\msc\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS
+-I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\CMSIS\Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc
@@ -43,6 +49,12 @@ E:\101_EleMon\01. ver2.0\04.Firmware\msc\Drivers\CMSIS\Device\ST\STM32F4xx\Inclu
 E:\101_EleMon\01. ver2.0\04.Firmware\msc\Middlewares\Third_Party\FatFs\src
 -I
 E:\101_EleMon\01. ver2.0\04.Firmware\msc\Drivers\CMSIS\Include
+-I
+E:\101_EleMon\01. ver2.0\04.Firmware\msc\Middlewares\Third_Party\FreeRTOS\Source\portable\IAR\ARM_CM4F
+-I
+E:\101_EleMon\01. ver2.0\04.Firmware\msc\Middlewares\Third_Party\FreeRTOS\Source\include
+-I
+E:\101_EleMon\01. ver2.0\04.Firmware\msc\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\CMSIS\Include
 -DUSE_HAL_DRIVER=1
